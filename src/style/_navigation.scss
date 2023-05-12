@@ -1,10 +1,24 @@
 .navigation {
   &__list {
+    display: none;
   }
 
   &__item {
   }
 
   &__button {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: url("../img/menu.svg") center/contain no-repeat;
+
+    @include lg {
+      width: 48px;
+      height: 48px;
+    }
+
+    &_active {
+      background-image: url("../img/close.svg");
+    }
   }
 }
