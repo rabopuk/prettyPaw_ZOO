@@ -12,11 +12,22 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
+  background-color: $back;
+  color: $main;
+  font-family: Mulish, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 300;
+
+  @include lg {
+    font-size: 20px;
+  }
 }
 
 img,
-svg {
+svg,
+video {
+  display: block;
   max-width: 100%;
   max-height: 100%;
   height: auto;
@@ -62,17 +73,44 @@ iframe {
   transform: scale(0);
 }
 
-/*
-Пример контейнера
-
-Если контейнер 1180px по макету,
-то для max-width прибавляем паддинги 30px*2,
-в итоге 1240px
-Чтобы контент не прижимался к краям экрана
-*/
-
 .container {
-  // max-width: 1240px;
-  padding: 0 30px;
-  margin: 0 auto;
+  padding: 0 16px;
+
+  @include sm {
+    padding: 0 24px;
+  }
+
+  @include md {
+    padding: 0 32px;
+  }
+
+  @include xxl {
+    // Хорошо для 4k
+    max-width: 2560px;
+    padding: 0 64px;
+    margin: 0 auto;
+  }
+}
+
+.link-main {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 4px;
+  width: 156px;
+  height: 36px;
+  border-radius: 80px;
+  font-weight: 1000;
+  font-size: 16px;
+  line-height: 1;
+  background: $second;
+  color: $back;
+
+  &::after {
+    content: "";
+    display: block;
+    background: url("../img/arrow-right.svg") center/contain no-repeat;
+    width: 16px;
+    height: 16px;
+  }
 }
