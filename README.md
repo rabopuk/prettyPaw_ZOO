@@ -1,4 +1,4 @@
-# Разработка сайта для зоосада 'PrettyPaw'
+# Разработка сайта для зоосада 'PrettyPaw' by rabopuk
 
 
 ## WEBPACK
