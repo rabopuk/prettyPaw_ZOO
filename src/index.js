@@ -1,6 +1,10 @@
 import './index.html';
+
 // new modules
-import './index.scss'; // Добавлять библиотеки до своих стилей, чтоб можно было перекрыть
+// !Добавлять библиотеки до своих стилей, чтоб можно было перекрывать своими стилями
+import 'swiper/scss';
+import 'swiper/scss/pagination';
+import './index.scss';
 
 //use modules
 const videoBG = document.querySelector('.video-bg');

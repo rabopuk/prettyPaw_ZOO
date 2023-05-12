@@ -83,20 +83,24 @@ iframe {
 }
 
 .container {
-  padding: 0 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 
   @include sm {
-    padding: 0 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   @include md {
-    padding: 0 32px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   @include xxl {
     // Хорошо для 4k
     max-width: 2560px;
-    padding: 0 64px;
+    padding-left: 64px;
+    padding-right: 64px;
     margin: 0 auto;
   }
 }
