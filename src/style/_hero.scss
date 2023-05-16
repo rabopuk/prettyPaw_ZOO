@@ -45,6 +45,10 @@
     padding-bottom: 48px;
     z-index: 200;
 
+    @include lg {
+      padding-bottom: 72px;
+    }
+
     @include xl {
       min-height: 780px;
     }
@@ -61,6 +65,10 @@
     text-transform: uppercase;
     color: $back;
     margin-bottom: 24px;
+
+    @include lg {
+      font-size: 52px;
+    }
   }
 
   &__subtitle {
@@ -68,6 +76,10 @@
     line-height: 1;
     text-transform: uppercase;
     color: $second;
+
+    @include lg {
+      font-size: 40px;
+    }
   }
 
   &::before {
