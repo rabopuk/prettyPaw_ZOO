@@ -131,3 +131,17 @@ iframe {
     font-size: 20px;
   }
 }
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 16px;
+  background-color: $second;
+  opacity: 1;
+  transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.swiper-pagination-bullet-active {
+  width: 40px;
+  background-color: $back;
+}
