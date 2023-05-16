@@ -110,8 +110,6 @@ iframe {
   align-items: center;
   padding: 10px 20px;
   gap: 4px;
-  width: 156px;
-  height: 36px;
   border-radius: 80px;
   font-weight: 1000;
   font-size: 16px;
@@ -125,5 +123,11 @@ iframe {
     background: url("../img/arrow-right.svg") center/contain no-repeat;
     width: 16px;
     height: 16px;
+  }
+
+  @include lg {
+    padding: 16px 32px;
+    gap: 10px;
+    font-size: 20px;
   }
 }

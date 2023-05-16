@@ -51,6 +51,7 @@
 
     @include xl {
       min-height: 780px;
+      padding-bottom: 100px;
     }
 
     @include xxl {
@@ -68,6 +69,7 @@
 
     @include lg {
       font-size: 52px;
+      margin-bottom: 40px;
     }
   }
 
