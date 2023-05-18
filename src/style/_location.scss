@@ -1,0 +1,162 @@
+.location {
+  &__list {
+  }
+
+  &__item {
+    position: relative;
+    padding: 50px 16px;
+    min-height: 272px;
+
+    @include sm {
+      padding: 50px 32px;
+      min-height: 200px;
+    }
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: calc(100% - 16px * 2);
+
+      bottom: 0;
+      right: 50%;
+      background-color: $second;
+      transform: translate(50%, 0.5px);
+    }
+
+    // &:last-child::after {
+    //   content: unset;
+    // }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &_mammals::before {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        image-set(
+          url("../img/mammals@2x.webp") 2x,
+          url("../img/mammals@2x.jpg") 2x,
+          url("../img/mammals.webp") 1x,
+          url("../img/mammals.jpg") 1x
+        );
+
+      @include sm {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("../img/mammals_tablet.jpg");
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          image-set(
+            url("../img/mammals_tablet@2x.webp") 2x,
+            url("../img/mammals_tablet@2x.jpg") 2x,
+            url("../img/mammals_tablet.webp") 1x,
+            url("../img/mammals_tablet.jpg") 1x
+          );
+      }
+    }
+
+    &_birds::before {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        image-set(
+          url("../img/birds@2x.webp") 2x,
+          url("../img/birds@2x.jpg") 2x,
+          url("../img/birds.webp") 1x,
+          url("../img/birds.jpg") 1x
+        );
+
+      @include sm {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/birds_tablet.jpg");
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          image-set(
+            url("../img/birds_tablet@2x.webp") 2x,
+            url("../img/birds_tablet@2x.jpg") 2x,
+            url("../img/birds_tablet.webp") 1x,
+            url("../img/birds_tablet.jpg") 1x
+          );
+      }
+    }
+
+    &_reptiles::before {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        image-set(
+          url("../img/reptiles@2x.webp") 2x,
+          url("../img/reptiles@2x.jpg") 2x,
+          url("../img/reptiles.webp") 1x,
+          url("../img/reptiles.jpg") 1x
+        );
+
+      @include sm {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("../img/reptiles_tablet.jpg");
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          image-set(
+            url("../img/reptiles_tablet@2x.webp") 2x,
+            url("../img/reptiles_tablet@2x.jpg") 2x,
+            url("../img/reptiles_tablet.webp") 1x,
+            url("../img/reptiles_tablet.jpg") 1x
+          );
+      }
+    }
+
+    &_water::before {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        image-set(
+          url("../img/water@2x.webp") 2x,
+          url("../img/water@2x.jpg") 2x,
+          url("../img/water.webp") 1x,
+          url("../img/water.jpg") 1x
+        );
+
+      @include sm {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/water_tablet.jpg");
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          image-set(
+            url("../img/water_tablet@2x.webp") 2x,
+            url("../img/water_tablet@2x.jpg") 2x,
+            url("../img/water_tablet.webp") 1x,
+            url("../img/water_tablet.jpg") 1x
+          );
+      }
+    }
+
+    &_insects::before {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        image-set(
+          url("../img/insects@2x.webp") 2x,
+          url("../img/insects@2x.jpg") 2x,
+          url("../img/insects.webp") 1x,
+          url("../img/insects.jpg") 1x
+        );
+
+      @include sm {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("../img/insects_tablet.jpg");
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          image-set(
+            url("../img/insects_tablet@2x.webp") 2x,
+            url("../img/insects_tablet@2x.jpg") 2x,
+            url("../img/insects_tablet.webp") 1x,
+            url("../img/insects_tablet.jpg") 1x
+          );
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 1000;
+    font-size: 20px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $back;
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    color: $second;
+  }
+}

@@ -6,6 +6,7 @@ import './index.html';
 import 'swiper/scss';
 import 'swiper/scss/pagination';
 import { slidersInit } from './modules/sliders';
+
 import './index.scss';
 
 
