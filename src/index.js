@@ -19,11 +19,36 @@ slidersInit('.about__slider', {
 });
 
 // https://swiperjs.com/swiper-api#param-breakpoints
-// slidersInit('.', {
-//   pagination: {
-//     el: '.about__slider-pagination',
-//   },
-// });
+slidersInit('.career__slider', {
+  pagination: {
+    el: '.career__slider-pagination',
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 'auto',
+      spaceBetween: 12,
+      pagination: false,
+    },
+    1024: {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      pagination: false,
+
+    },
+    1240: {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      pagination: false,
+
+    },
+    1600: {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      pagination: false,
+
+    }
+  }
+});
 
 
 const videoBG = document.querySelector('.video-bg');
