@@ -63,9 +63,9 @@
       grid-area: link;
     }
   }
-
+  // ?На некоторых разрешениях слайд обрезается или торчит лишний
   &__slider {
-    overflow: visible;
+    // overflow: visible;
   }
 
   &__image-list {
@@ -75,16 +75,17 @@
     height: unset;
     display: flex;
     align-items: center;
+    margin-right: 0;
 
     @include md {
       &:nth-child(odd) {
-        // width: 36%;
-        width: 34%;
+        width: 36%;
+        // width: 34%;
       }
 
       &:nth-child(even) {
-        // width: 24%;
-        width: 25%;
+        width: 24%;
+        // width: 25%;
       }
     }
 

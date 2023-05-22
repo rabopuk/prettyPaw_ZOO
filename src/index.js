@@ -26,26 +26,26 @@ slidersInit('.career__slider', {
   breakpoints: {
     768: {
       slidesPerView: 'auto',
-      spaceBetween: 30,
+      spaceBetween: 12,
       pagination: false,
     },
     1024: {
       slidesPerView: 'auto',
-      spaceBetween: 26,
+      spaceBetween: 16,
       pagination: false,
 
     },
     1240: {
       slidesPerView: 'auto',
-      spaceBetween: 30,
+      spaceBetween: 20,
       pagination: false,
 
     },
-    // 1600: {
-    //   slidesPerView: 'auto',
-    //   spaceBetween: 20,
-    //   pagination: false,
-    // }
+    1600: {
+      slidesPerView: 'auto',
+      spaceBetween: 24,
+      pagination: false,
+    }
   }
 });
 
