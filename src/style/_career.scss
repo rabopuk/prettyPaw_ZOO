@@ -65,7 +65,7 @@
   }
 
   &__slider {
-    // overflow: hidden;
+    overflow: visible;
   }
 
   &__image-list {
@@ -78,17 +78,19 @@
 
     @include md {
       &:nth-child(odd) {
-        width: 36%;
+        // width: 36%;
+        width: 34%;
       }
 
       &:nth-child(even) {
-        width: 24%;
+        // width: 24%;
+        width: 25%;
       }
     }
 
     @include xl {
       &:nth-child(odd) {
-        width: 28%;
+        width: 27%;
       }
 
       &:nth-child(even) {
