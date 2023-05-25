@@ -7,6 +7,7 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 import { slidersInit } from './modules/sliders';
 import { videoBackgroundInit } from './modules/videoBackground';
+import { menuControl } from './modules/menuControl';
 
 import './index.scss';
 
@@ -14,6 +15,7 @@ import './index.scss';
 //use modules
 
 videoBackgroundInit();
+menuControl();
 
 slidersInit('.about__slider', {
   pagination: {
