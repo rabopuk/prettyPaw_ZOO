@@ -74,6 +74,11 @@
     @include xl {
       gap: 60px;
     }
+
+    @include xxl {
+      min-height: 400px;
+      height: min-content;
+    }
   }
 
   &__description {
@@ -123,9 +128,6 @@
     @include lg {
       font-size: 52px;
     }
-  }
-
-  &__count-desc {
   }
 
   &__picture {

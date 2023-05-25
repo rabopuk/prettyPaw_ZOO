@@ -45,7 +45,17 @@ slidersInit('.career__slider', {
       slidesPerView: 'auto',
       spaceBetween: 24,
       pagination: false,
-    }
+    },
+    1920: {
+      slidesPerView: 'auto',
+      spaceBetween: 32,
+      pagination: false,
+    },
+    2560: {
+      slidesPerView: 'auto',
+      spaceBetween: 40,
+      pagination: false,
+    },
   }
 });
 
