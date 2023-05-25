@@ -1,6 +1,69 @@
 .navigation {
   &__list {
     display: none;
+    position: absolute;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background-color: $main;
+    color: $second;
+    text-align: center;
+
+    @include lg {
+      padding-top: 144px;
+      padding-bottom: 144px;
+    }
+
+    @include xl {
+      position: static;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      height: auto;
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include xl {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-weight: 1000;
+    font-size: 16px;
+    line-height: 1;
+    white-space: nowrap;
+
+    &_active {
+      color: $back;
+      pointer-events: none;
+    }
+
+    @include xl {
+      display: block;
+      padding: 16px 28px;
+      border: 2px solid $back;
+      border-radius: 80px;
+
+      &_active {
+        color: inherit;
+        pointer-events: none;
+        background-color: $back;
+      }
+    }
   }
 
   &__button {
@@ -14,6 +77,9 @@
       height: 48px;
     }
 
+    @include xl {
+      display: none;
+    }
     &_active {
       background-image: url("../img/close.svg");
     }
