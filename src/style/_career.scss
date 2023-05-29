@@ -65,7 +65,9 @@
   }
   // ?На некоторых разрешениях слайд обрезается или торчит лишний
   &__slider {
-    overflow: visible;
+    @include md {
+      overflow: visible;
+    }
   }
 
   &__image-item {
@@ -75,23 +77,27 @@
     margin-right: 0;
 
     @include md {
-      &:nth-child(odd) {
+      &_odd {
         width: 36%;
       }
 
-      &:nth-child(even) {
+      &_even {
         width: 24%;
       }
     }
 
     @include xl {
-      &:nth-child(odd) {
+      &_odd {
         width: 28%;
       }
 
-      &:nth-child(even) {
+      &_even {
         width: 20%;
       }
     }
+  }
+
+  &__image {
+    border-radius: 16px;
   }
 }

@@ -23,6 +23,12 @@ slidersInit('.about__slider', {
   },
 });
 
+const careerImageItems = document.querySelectorAll('.career__image-item');
+
+careerImageItems.forEach((item, i) => {
+  item.classList.add(`career__image-item_${i % 2 ? 'even' : 'odd'}`);
+});
+
 // https://swiperjs.com/swiper-api#param-breakpoints
 slidersInit('.career__slider', {
   pagination: {
@@ -42,7 +48,7 @@ slidersInit('.career__slider', {
     },
     1240: {
       slidesPerView: 'auto',
-      spaceBetween: 20,
+      spaceBetween: 16,
       pagination: false,
 
     },

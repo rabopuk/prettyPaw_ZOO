@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  position: relative;
   min-width: 320px;
   min-height: 100vh;
   background-color: $back;
@@ -19,8 +20,57 @@ body {
   line-height: 1.4;
   font-weight: 300;
 
+  // TODO: удалить после разработки все @include в body
+  @include sm {
+    &::before {
+      content: "SM 576";
+      position: absolute;
+      display: block;
+      padding-top: 4px;
+      top: 0;
+      left: 0;
+      max-width: 84px;
+      height: 84px;
+      background-color: violet;
+      color: $second;
+      font-weight: 1000;
+      font-size: 36px;
+      line-height: 1;
+      text-align: center;
+      z-index: 15000;
+    }
+  }
+
+  @include md {
+    &::before {
+      content: "MD 768";
+      background-color: tomato;
+    }
+  }
+
   @include lg {
-    font-size: 20px;
+    &::before {
+      content: "LG 1024";
+      padding-top: 8px;
+      max-width: 120px;
+      height: 120px;
+      background-color: hotpink;
+      font-size: 48px;
+    }
+  }
+
+  @include xl {
+    &::before {
+      content: "XL 1240";
+      background-color: grey;
+    }
+  }
+
+  @include xxl {
+    &::before {
+      content: "XXL 1600";
+      background-color: brown;
+    }
   }
 }
 
@@ -118,7 +168,9 @@ iframe {
   align-items: center;
   padding: 10px 20px;
   gap: 4px;
+  border: 2px solid transparent;
   border-radius: 80px;
+  outline: none;
   font-weight: 1000;
   font-size: 16px;
   line-height: 1;
@@ -128,15 +180,31 @@ iframe {
   &::after {
     content: "";
     display: block;
-    background: url("../img/arrow-right.svg") center/contain no-repeat;
+    // background: url("../img/arrow-right.svg") center/contain no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.53317 12.8667C7.41095 12.7445 7.34695 12.5889 7.34117 12.4C7.3354 12.2111 7.39384 12.0556 7.51651 11.9333L10.7832 8.66668H3.33317C3.14428 8.66668 2.98584 8.60268 2.85784 8.47468C2.72984 8.34668 2.66606 8.18846 2.66651 8.00001C2.66651 7.81112 2.73051 7.65268 2.85851 7.52468C2.98651 7.39668 3.14473 7.3329 3.33317 7.33335H10.7832L7.51651 4.06668C7.39428 3.94446 7.33584 3.7889 7.34117 3.60001C7.34651 3.41112 7.41051 3.25557 7.53317 3.13335C7.6554 3.01112 7.81095 2.95001 7.99984 2.95001C8.18873 2.95001 8.34428 3.01112 8.46651 3.13335L12.8665 7.53335C12.9332 7.5889 12.9805 7.65846 13.0085 7.74201C13.0365 7.82557 13.0503 7.91157 13.0498 8.00001C13.0498 8.0889 13.0361 8.17223 13.0085 8.25001C12.981 8.32779 12.9336 8.40001 12.8665 8.46668L8.46651 12.8667C8.34428 12.9889 8.18873 13.05 7.99984 13.05C7.81095 13.05 7.6554 12.9889 7.53317 12.8667Z' fill='%23FFAA05'/%3E%3C/svg%3E%0A");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 16px;
     height: 16px;
+  }
+
+  &:focus:not(:hover) {
+    border-color: $main;
   }
 
   @include lg {
     padding: 16px 32px;
     gap: 10px;
     font-size: 20px;
+
+    &:hover {
+      color: $main;
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.53317 12.8667C7.41095 12.7445 7.34695 12.5889 7.34117 12.4C7.3354 12.2111 7.39384 12.0556 7.51651 11.9333L10.7832 8.66668H3.33317C3.14428 8.66668 2.98584 8.60268 2.85784 8.47468C2.72984 8.34668 2.66606 8.18846 2.66651 8.00001C2.66651 7.81112 2.73051 7.65268 2.85851 7.52468C2.98651 7.39668 3.14473 7.3329 3.33317 7.33335H10.7832L7.51651 4.06668C7.39428 3.94446 7.33584 3.7889 7.34117 3.60001C7.34651 3.41112 7.41051 3.25557 7.53317 3.13335C7.6554 3.01112 7.81095 2.95001 7.99984 2.95001C8.18873 2.95001 8.34428 3.01112 8.46651 3.13335L12.8665 7.53335C12.9332 7.5889 12.9805 7.65846 13.0085 7.74201C13.0365 7.82557 13.0503 7.91157 13.0498 8.00001C13.0498 8.0889 13.0361 8.17223 13.0085 8.25001C12.981 8.32779 12.9336 8.40001 12.8665 8.46668L8.46651 12.8667C8.34428 12.9889 8.18873 13.05 7.99984 13.05C7.81095 13.05 7.6554 12.9889 7.53317 12.8667Z' fill='%23000000'/%3E%3C/svg%3E%0A");
+      }
+    }
   }
 }
 
