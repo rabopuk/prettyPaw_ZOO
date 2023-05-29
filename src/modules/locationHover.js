@@ -45,21 +45,46 @@ export const locationHover = () => {
     item.addEventListener('mouseenter', () => {
       if (mediaQueryLG.matches) {
         timeLine.play();
+
+        gsap.to(locationList, {
+          '--background-image': `url('${item.dataset.image}')`,
+          '--opacity': 1,
+          duration: 1,
+        });
       }
     });
 
     item.addEventListener('mouseleave', () => {
       if (mediaQueryLG.matches) {
         timeLine.reverse();
+
+        gsap.to(locationList, {
+          '--opacity': 0,
+          duration: 1,
+        });
       }
     });
+
+    // Прогрузить заранее картинки в location
+    const linkPreload = document.createElement('link');
+    linkPreload.rel = 'preload';
+    linkPreload.href = item.dataset.image;
+    linkPreload.as = 'image';
+
+    // Если не мобилка, прогрузить картинки в location
+    if (mediaQueryLG.matches) {
+      document?.head.append(linkPreload);
+    }
 
     mediaQueryLG.addEventListener('change', (e) => {
       if (!e.matches) {
         content.style = '';
         title.style = '';
         description.style = '';
+      } else {
+        // Если не мобилка, прогрузить картинки в location (запасная проверка на устройствах при перевороте экрана)
+        document?.head.append(linkPreload);
       }
-    })
+    });
   }
 };
