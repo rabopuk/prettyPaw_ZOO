@@ -8,6 +8,7 @@ import 'swiper/scss/pagination';
 import { slidersInit } from './modules/sliders';
 import { videoBackgroundInit } from './modules/videoBackground';
 import { menuControl } from './modules/menuControl';
+import { locationHover } from './modules/locationHover';
 
 import './index.scss';
 
@@ -16,6 +17,7 @@ import './index.scss';
 
 videoBackgroundInit();
 menuControl();
+locationHover();
 
 slidersInit('.about__slider', {
   pagination: {
