@@ -22,6 +22,7 @@ locationHover();
 slidersInit('.about__slider', {
   pagination: {
     el: '.about__slider-pagination',
+    enabled: true,
   },
 });
 
@@ -35,39 +36,50 @@ careerImageItems.forEach((item, i) => {
 slidersInit('.career__slider', {
   pagination: {
     el: '.career__slider-pagination',
+    enabled: true,
   },
   breakpoints: {
     768: {
       slidesPerView: 'auto',
       spaceBetween: 12,
-      pagination: false,
+      pagination: {
+        enabled: false,
+      }
     },
     1024: {
       slidesPerView: 'auto',
       spaceBetween: 16,
-      pagination: false,
-
+      pagination: {
+        enabled: false,
+      }
     },
     1240: {
       slidesPerView: 'auto',
       spaceBetween: 16,
-      pagination: false,
-
+      pagination: {
+        enabled: false,
+      }
     },
     1600: {
       slidesPerView: 'auto',
       spaceBetween: 24,
-      pagination: false,
+      pagination: {
+        enabled: false,
+      }
     },
     1920: {
       slidesPerView: 'auto',
       spaceBetween: 32,
-      pagination: false,
+      pagination: {
+        enabled: false,
+      }
     },
     2560: {
       slidesPerView: 'auto',
       spaceBetween: 40,
-      pagination: false,
+      pagination: {
+        enabled: false,
+      }
     },
   }
 });
