@@ -44,12 +44,14 @@ export const menuControl = () => {
       navigationItems.forEach((elem) => {
         gsap.set(elem, { opacity: 1, x: 0 });
       });
-      // navigationButton.classList.remove('navigation__button_active');
     } else {
       gsap.set(navigationList, { opacity: 0, display: 'none' });
       navigationItems.forEach((elem, i) => {
         const x = i % 2 ? 500 : -500;
         gsap.set(elem, { opacity: 0, x, duration: 0.4 });
+        if (navigationButton.classList.contains('navigation__button_active')) {
+          timeLine.restart();
+        }
       });
     }
   };
