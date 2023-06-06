@@ -71,4 +71,20 @@
       margin-bottom: 16px;
     }
   }
+
+  &__social-link,
+  &__developer-link {
+    color: $main;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-radius: 4px;
+    transition: color 0.4s ease-in-out;
+    &:focus:not(:hover) {
+      outline-color: $second;
+    }
+
+    &:hover {
+      color: $second;
+    }
+  }
 }

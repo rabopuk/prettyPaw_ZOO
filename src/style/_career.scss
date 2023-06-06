@@ -1,103 +1,103 @@
 .career {
-  padding-top: 80px;
-  padding-bottom: 40px;
-  overflow-x: hidden;
+	padding-top: 80px;
+	padding-bottom: 40px;
+	overflow: hidden;
 
-  @include lg {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
+	@include lg {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
 
-  &__content {
-    margin-bottom: 40px;
+	&__content {
+		margin-bottom: 40px;
 
-    @include md {
-      display: grid;
-      grid-template-columns: 1fr min-content;
-      justify-content: space-between;
-      gap: 12px 20px;
-      grid-template-areas:
-        "title link"
-        "description .";
-    }
+		@include md {
+			display: grid;
+			grid-template-columns: 1fr min-content;
+			justify-content: space-between;
+			gap: 12px 20px;
+			grid-template-areas:
+				"title link"
+				"description .";
+		}
 
-    @include lg {
-      gap: 28px 32px;
-      margin-bottom: 52px;
-    }
+		@include lg {
+			gap: 28px 32px;
+			margin-bottom: 52px;
+		}
 
-    @include xl {
-      grid-template-columns: 692px min-content;
-    }
-  }
+		@include xl {
+			grid-template-columns: 692px min-content;
+		}
+	}
 
-  &__title {
-    font-weight: 1000;
-    font-size: 32px;
-    line-height: 1;
-    text-transform: uppercase;
-    color: $second;
-    margin-bottom: 24px;
+	&__title {
+		font-weight: 1000;
+		font-size: 32px;
+		line-height: 1;
+		text-transform: uppercase;
+		color: $second;
+		margin-bottom: 24px;
 
-    @include md {
-      grid-area: title;
-      margin-bottom: 0;
-    }
+		@include md {
+			grid-area: title;
+			margin-bottom: 0;
+		}
 
-    @include lg {
-      font-size: 52px;
-    }
-  }
+		@include lg {
+			font-size: 52px;
+		}
+	}
 
-  &__description {
-    margin-bottom: 24px;
+	&__description {
+		margin-bottom: 24px;
 
-    @include md {
-      grid-area: description;
-      margin-bottom: 0;
-    }
-  }
+		@include md {
+			grid-area: description;
+			margin-bottom: 0;
+		}
+	}
 
-  &__link {
-    @include md {
-      grid-area: link;
-    }
-  }
-  // ?На некоторых разрешениях слайд обрезается или торчит лишний
-  &__slider {
-    @include md {
-      overflow: visible;
-    }
-  }
+	&__link {
+		@include md {
+			grid-area: link;
+		}
+	}
+	// ?На некоторых разрешениях слайд обрезается или торчит лишний
+	&__slider {
+		@include md {
+			overflow: visible;
+		}
+	}
 
-  &__image-item {
-    height: unset;
-    display: flex;
-    align-items: center;
-    margin-right: 0;
+	&__image-item {
+		height: unset;
+		display: flex;
+		align-items: center;
+		margin-right: 0;
 
-    @include md {
-      &_odd {
-        width: 36%;
-      }
+		@include md {
+			&_odd {
+				width: 36%;
+			}
 
-      &_even {
-        width: 24%;
-      }
-    }
+			&_even {
+				width: 24%;
+			}
+		}
 
-    @include xl {
-      &_odd {
-        width: 28%;
-      }
+		@include xl {
+			&_odd {
+				width: 28%;
+			}
 
-      &_even {
-        width: 20%;
-      }
-    }
-  }
+			&_even {
+				width: 20%;
+			}
+		}
+	}
 
-  &__image {
-    border-radius: 16px;
-  }
+	&__image {
+		border-radius: 16px;
+	}
 }
