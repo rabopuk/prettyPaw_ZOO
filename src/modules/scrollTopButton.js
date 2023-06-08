@@ -1,19 +1,4 @@
-// debounce сокращает количество вызовов функции
-const debounce = (fn, msec) => {
-	let lastCall = 0,
-		lastCallTimer = 0;
-
-	return (...arg) => {
-		const prevCall = lastCall;
-		lastCall = Date.now();
-
-		if (prevCall && (lastCall - prevCall) < msec) {
-			clearTimeout(lastCallTimer);
-		}
-
-		lastCallTimer = setTimeout(() => fn(...arg), msec);
-	};
-};
+import { debounce } from "./helper";
 
 const createArrow = (className = 'arrow-up', { hover = true } = {}) => {
 	const button = document.createElement('button');
@@ -96,14 +81,11 @@ export const initScrollButton = (className, options) => {
 		if (scrollPosition > window.innerHeight / 2) {
 			arrow.style.display = 'flex';
 			if (arrow.style.opacity === '0') {
-				opacityAnimation(arrow, 0, 1, .1, () => {
-					arrow.style.opacity = 1;
-				});
+				opacityAnimation(arrow, 0, 1, .1);
 			}
 		} else {
 			if (!arrow.style.opacity || arrow.style.opacity === '1') {
 				opacityAnimation(arrow, 1, 0, .1, () => {
-					arrow.style.opacity = 0;
 					arrow.style.display = 'none';
 				})
 			}
