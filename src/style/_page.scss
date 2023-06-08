@@ -1,0 +1,118 @@
+.page {
+	padding-top: 120px;
+	padding-bottom: 60px;
+
+	@include lg {
+		padding-top: 216px;
+		padding-bottom: 100px;
+	}
+
+	&__container {
+		padding: 0 16px;
+
+		@include md {
+			padding: 0 32px;
+		}
+
+		@include lg {
+			padding-left: 192px;
+		}
+
+		@include xl {
+			max-width: 920px;
+			padding: 0;
+			margin: 0 auto;
+		}
+	}
+
+	&__title {
+		font-weight: 1000;
+		font-size: 32px;
+		line-height: 1;
+		text-transform: uppercase;
+		color: $second;
+		margin-bottom: 24px;
+
+		@include lg {
+			font-size: 52px;
+			margin-bottom: 40px;
+		}
+	}
+
+	&__text-block {
+		margin-bottom: 40px;
+
+		@include lg {
+			font-size: 20px;
+			margin-bottom: 60px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__text {
+		margin-bottom: 16px;
+
+		@include lg {
+			margin-bottom: 20px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__image-block {
+		margin-bottom: 40px;
+
+		@include lg {
+			margin-bottom: 60px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&_double {
+			--gap: 16px;
+
+			@include sm {
+				display: flex;
+				gap: var(--gap);
+
+				.page__image {
+					width: calc(50% - var(--gap) / 2);
+				}
+			}
+
+			@include lg {
+				--gap: 20px;
+			}
+
+			@include xl {
+				--gap: 32px;
+			}
+		}
+	}
+
+	&__image {
+		height: 300px;
+		object-fit: cover;
+		border-radius: 16px;
+
+		&:nth-child(2) {
+			display: none;
+		}
+
+		@include sm {
+			height: auto;
+			// flex-grow: 1;
+
+			&:nth-child(2) {
+				display: block;
+			}
+		}
+	}
+}
