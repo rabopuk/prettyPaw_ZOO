@@ -1,7 +1,8 @@
 import './index.html';
 import './page.html';
 
-// new modules  // !Добавлять библиотеки до своих стилей, чтоб можно было перекрывать своими стилями
+// new modules
+// !Добавлять библиотеки до своих стилей, чтоб можно было перекрывать своими стилями
 
 import 'swiper/scss';
 import 'swiper/scss/pagination';
@@ -10,6 +11,7 @@ import { videoBackgroundInit } from './modules/videoBackground';
 import { menuControl } from './modules/menuControl';
 import { locationHover } from './modules/locationHover';
 import { initScrollButton } from './modules/scrollTopButton';
+import { pageControlInit } from './modules/pageControl';
 
 import './index.scss';
 
@@ -22,6 +24,7 @@ locationHover();
 initScrollButton('arrow-top', {
 	hover: false,
 });
+pageControlInit();
 
 slidersInit('.about__slider', {
 	pagination: {
