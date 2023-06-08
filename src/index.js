@@ -3,17 +3,16 @@ import './page.html';
 
 // new modules
 // !Добавлять библиотеки до своих стилей, чтоб можно было перекрывать своими стилями
-
 import 'swiper/scss';
 import 'swiper/scss/pagination';
+import './index.scss';
+
 import { slidersInit } from './modules/sliders';
 import { videoBackgroundInit } from './modules/videoBackground';
 import { menuControl } from './modules/menuControl';
 import { locationHover } from './modules/locationHover';
 import { initScrollButton } from './modules/scrollTopButton';
 import { pageControlInit } from './modules/pageControl';
-
-import './index.scss';
 
 
 //use modules

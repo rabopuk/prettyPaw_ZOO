@@ -69,6 +69,20 @@ const createArrow = (className = 'arrow-up', { hover = true } = {}) => {
 	return button;
 };
 
+const opacityAnimation = (elem, from, to, step, callback) => {
+	requestAnimationFrame(() => {
+		const opacity = from < to ? from + step : from - step;
+		elem.style.opacity = opacity;
+
+		if (from < to ? opacity < to : opacity > to) {
+			opacityAnimation(elem, opacity, to, step, callback);
+		} else {
+			elem.style.opacity = to;
+			if (callback) callback();
+		}
+	})
+}
+
 export const initScrollButton = (className, options) => {
 	const arrow = createArrow(className, options);
 
@@ -77,8 +91,23 @@ export const initScrollButton = (className, options) => {
 	const showElemScrollPosition = () => {
 		const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-		arrow.style.display =
-			scrollPosition > (window.innerHeight / 2) ? 'flex' : 'none';
+		// arrow.style.display =
+		// 	scrollPosition > (window.innerHeight / 2) ? 'flex' : 'none';
+		if (scrollPosition > window.innerHeight / 2) {
+			arrow.style.display = 'flex';
+			if (arrow.style.opacity === '0') {
+				opacityAnimation(arrow, 0, 1, .1, () => {
+					arrow.style.opacity = 1;
+				});
+			}
+		} else {
+			if (!arrow.style.opacity || arrow.style.opacity === '1') {
+				opacityAnimation(arrow, 1, 0, .1, () => {
+					arrow.style.opacity = 0;
+					arrow.style.display = 'none';
+				})
+			}
+		}
 	};
 
 	window.addEventListener('scroll', debounce(showElemScrollPosition, 100));
