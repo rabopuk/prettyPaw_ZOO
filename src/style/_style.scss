@@ -22,57 +22,57 @@ body {
 	font-weight: 300;
 
 	// TODO: удалить после разработки все @include в body
-	@include sm {
-		&::before {
-			content: "SM 576";
-			position: absolute;
-			display: block;
-			padding-top: 4px;
-			top: 0;
-			left: 0;
-			max-width: 84px;
-			height: 84px;
-			background-color: violet;
-			color: $second;
-			font-weight: 1000;
-			font-size: 36px;
-			line-height: 1;
-			text-align: center;
-			z-index: 15000;
-		}
-	}
+	// @include sm {
+	// 	&::before {
+	// 		content: "SM 576";
+	// 		position: absolute;
+	// 		display: block;
+	// 		padding-top: 4px;
+	// 		top: 0;
+	// 		left: 0;
+	// 		max-width: 84px;
+	// 		height: 84px;
+	// 		background-color: violet;
+	// 		color: $second;
+	// 		font-weight: 1000;
+	// 		font-size: 36px;
+	// 		line-height: 1;
+	// 		text-align: center;
+	// 		z-index: 15000;
+	// 	}
+	// }
 
-	@include md {
-		&::before {
-			content: "MD 768";
-			background-color: tomato;
-		}
-	}
+	// @include md {
+	// 	&::before {
+	// 		content: "MD 768";
+	// 		background-color: tomato;
+	// 	}
+	// }
 
-	@include lg {
-		&::before {
-			content: "LG 1024";
-			padding-top: 8px;
-			max-width: 120px;
-			height: 120px;
-			background-color: hotpink;
-			font-size: 48px;
-		}
-	}
+	// @include lg {
+	// 	&::before {
+	// 		content: "LG 1024";
+	// 		padding-top: 8px;
+	// 		max-width: 120px;
+	// 		height: 120px;
+	// 		background-color: hotpink;
+	// 		font-size: 48px;
+	// 	}
+	// }
 
-	@include xl {
-		&::before {
-			content: "XL 1240";
-			background-color: grey;
-		}
-	}
+	// @include xl {
+	// 	&::before {
+	// 		content: "XL 1240";
+	// 		background-color: grey;
+	// 	}
+	// }
 
-	@include xxl {
-		&::before {
-			content: "XXL 1600";
-			background-color: brown;
-		}
-	}
+	// @include xxl {
+	// 	&::before {
+	// 		content: "XXL 1600";
+	// 		background-color: brown;
+	// 	}
+	// }
 }
 
 img,
